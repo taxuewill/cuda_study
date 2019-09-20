@@ -19,7 +19,13 @@ include_directories(
 )
 add_subdirectory(cuda)
 
+add_subdirectory(cuda_lib)
+
 set(EXTRA_LIBS ${EXTRA_LIBS} gpu)
+set(EXTRA_LIBS ${EXTRA_LIBS} cuda_lib)
 
 add_executable(rgbtest main.cpp)
 target_link_libraries(rgbtest ${EXTRA_LIBS} ${OpenCV_LIBRARIES})
+
+add_executable(test1 cuda_test/test1.cpp)
+target_link_libraries(test1 ${EXTRA_LIBS} ${OpenCV_LIBRARIES})

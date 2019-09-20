@@ -35,7 +35,7 @@ int main(){
     // char * outData = new char[320*240*3];
 
 
-    //useCUDA();
+    useCUDA();
     delete output;
     
     cv::waitKey(10*1000);
